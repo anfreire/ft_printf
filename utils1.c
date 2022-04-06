@@ -6,7 +6,7 @@
 /*   By: anfreire <anfreire@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 22:36:14 by anfreire          #+#    #+#             */
-/*   Updated: 2022/04/06 01:33:37 by anfreire         ###   ########.fr       */
+/*   Updated: 2022/04/06 19:06:32 by anfreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_putstr(char *str)
 	return (i);
 }
 
-int	ft_ptr_len(uintptr_t num)
+int	ft_ptr_len(unsigned long long num)
 {
 	int	len;
 
@@ -54,7 +54,7 @@ int	ft_ptr_len(uintptr_t num)
 	return (len);
 }
 
-void	ft_put_ptr(uintptr_t num)
+void	ft_put_ptr(unsigned long long num)
 {
 	if (num >= 16)
 	{
