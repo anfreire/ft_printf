@@ -15,12 +15,9 @@ NAME = libftprintf.a
 SRCS =  ft_printf.c \
 		utils1.c \
 		utils2.c \
-		utils3.c \
 
-SURPL_O = ft_printf.o \
-		utils1.o \
+SURPL_O = utils1.o \
 		utils2.o \
-		utils3.o \
 
 CC = gcc
 

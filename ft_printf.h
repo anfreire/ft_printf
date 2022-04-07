@@ -21,16 +21,14 @@
 int			ft_printf(const char *fmt, ...);
 int			ft_putchar(char c);
 int			ft_putstr(char *str);
-int			ft_ptr_len(unsigned long long num);
-void		ft_put_ptr(unsigned long long num);
+int			ft_hex_len(unsigned long long num);
 int			ft_print_ptr(unsigned long long ptr);
 int			ft_nbr_cntr(int nb);
 int			ft_putnbr(int nb);
 int			ft_num_len(unsigned	int num);
 char		*ft_uitoa(unsigned int n);
-int			ft_print_unsigned(unsigned int n);
-int			ft_hex_len(unsigned	int num);
-void		ft_put_hex(unsigned int num, const char format);
+int			ft_print_unsigned_hex(unsigned int n, const char format);
+void		ft_put_hex(unsigned long long num, const char format);
 int			ft_print_hex(unsigned int num, const char format);
 
 #endif

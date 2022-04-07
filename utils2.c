@@ -97,19 +97,28 @@ char	*ft_uitoa(unsigned int n)
 	return (num);
 }
 
-int	ft_print_unsigned(unsigned int n)
+int	ft_print_unsigned_hex(unsigned int n, const char format)
 {
 	int		i;
 	char	*num;
 
-	i = 0;
-	if (n == 0)
-		i += write(1, "0", 1);
-	else
+	if (format == 0)
 	{
-		num = ft_uitoa(n);
-		i += ft_putstr(num);
-		free(num);
+		i = 0;
+		if (n == 0)
+			i += write(1, "0", 1);
+		else
+		{
+			num = ft_uitoa(n);
+			i += ft_putstr(num);
+			free(num);
+		}
+		return (i);
 	}
-	return (i);
+	else
+		if (n == 0)
+			return (write(1, "0", 1));
+	else
+		ft_put_hex((unsigned long long)n, format);
+	return (ft_hex_len((unsigned long long)n));
 }

@@ -47,9 +47,9 @@ static int	ft_aux_printf(const char *fmt, va_list args, int i)
 	else if (*fmt == 'd' || *fmt == 'i')
 		i += ft_putnbr(va_arg(args, int));
 	else if (*fmt == 'u')
-		i += ft_print_unsigned(va_arg(args, unsigned int));
+		i += ft_print_unsigned_hex(va_arg(args, unsigned int), 0);
 	else if (*fmt == 'x' || *fmt == 'X')
-		i += ft_print_hex(va_arg(args, unsigned int), *fmt);
+		i += ft_print_unsigned_hex(va_arg(args, unsigned int), *fmt);
 	else if (*fmt == '%')
 		i += ft_putchar('%');
 	return (i);
