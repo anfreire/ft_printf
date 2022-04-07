@@ -6,7 +6,7 @@
 /*   By: anfreire <anfreire@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 22:36:14 by anfreire          #+#    #+#             */
-/*   Updated: 2022/04/06 19:06:32 by anfreire         ###   ########.fr       */
+/*   Updated: 2022/04/07 15:12:43 by anfreire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,8 @@ int	ft_putstr(char *str)
 	i = 0;
 	if (!str)
 	{
-		ft_putchar('(');
-		ft_putchar('n');
-		ft_putchar('u');
-		ft_putchar('l');
-		ft_putchar('l');
-		ft_putchar(')');
-		return (6);
+		i = write(1, "(null)", 6);
+		return (i);
 	}
 	while (str[i] != '\0')
 	{
@@ -72,16 +67,16 @@ void	ft_put_ptr(unsigned long long num)
 
 int	ft_print_ptr(unsigned long long ptr)
 {
-	int	print_length;
+	int	i;
 
-	print_length = 0;
-	print_length += write(1, "0x", 2);
+	i = 0;
+	i += write(1, "0x", 2);
 	if (ptr == 0)
-		print_length += write(1, "0", 1);
+		i += write(1, "0", 1);
 	else
 	{
 		ft_put_ptr(ptr);
-		print_length += ft_ptr_len(ptr);
+		i += ft_ptr_len(ptr);
 	}
-	return (print_length);
+	return (i);
 }
